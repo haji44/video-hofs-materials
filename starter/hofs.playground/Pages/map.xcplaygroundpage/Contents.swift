@@ -4,3 +4,25 @@
 
 import Foundation
 
+extension Array {
+    func forLoopify<Transformed>(_ transform: (Element) -> Transformed) -> [Transformed] {
+        var transformedArray: [Transformed] = []
+        for element in self {
+            let transformed = transform(element)
+            transformedArray.append(transformed)
+        }
+        return transformedArray
+    }
+}
+
+
+struct User {
+    let numberArray = [1, 2, 3, 4]
+}
+
+
+
+// MARK: - flatMap
+
+let designersMap = gameLibrary.map(\.designers)
+let designersFlat = gameLibrary.flatMap(\.designers)

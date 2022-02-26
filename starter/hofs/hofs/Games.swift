@@ -33,7 +33,7 @@ public struct Game: Hashable, Equatable, CustomStringConvertible {
     case dinosaurs
     case horror
     case pirates
-  
+
     public var image: String {
       let image: String
       switch self {
@@ -43,12 +43,12 @@ public struct Game: Hashable, Equatable, CustomStringConvertible {
       case .horror: image = "👻"
       case .pirates: image = "🏴‍☠️"
       }
-      
+
       return image
     }
   }
-  
-  
+
+
   public let name: String
   public let theme: Theme
   public let designers: [String]
@@ -57,11 +57,11 @@ public struct Game: Hashable, Equatable, CustomStringConvertible {
   public let playTime: Int
   public var ozmaApproved = true
   public var rating: Int = 0
-  
+
   public var description: String {
     "\(name): theme: \(theme.rawValue), designer: \(designers.joined(separator: ", ")), artist: \(artists.joined(separator: ", "))"
   }
-  
+
   public var ratingDescription: String {
     "\(name) - rating: \(rating), Ozma-approved: \(ozmaApproved)"
   }
@@ -280,14 +280,14 @@ public class NameFormatter: PersonNameComponentsFormatter {
            let familyInitial = family.first {
           return "\(given) \(familyInitial)."
         }
-        
+
         return given
       }
-      
+
       if let family = components.familyName {
         return family
       }
-      
+
       return "Ozma C."
       
     } else {

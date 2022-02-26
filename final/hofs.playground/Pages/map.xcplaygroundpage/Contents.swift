@@ -2,7 +2,7 @@
 /// published at raywenderlich.com, Copyright (c) 2021 Razeware LLC.
 /// See LICENSE for details. Thank you for supporting our work!
 
-import Algorithms
+//import Algorithms
 import Foundation
 
 extension Array {
@@ -17,12 +17,8 @@ extension Array {
 }
 
 var gameNames: [String] = []
-for game in gameLibrary {
-  let name = game.name
-  gameNames.append(name)
-}
 
-gameNames = gameLibrary.forLoopify { game in
+gameLibrary.forLoopify { game in
   game.name
 }
 
